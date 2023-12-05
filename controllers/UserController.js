@@ -20,7 +20,7 @@ const register = async(req, res) => {
 
     if(user){
         res.status(422).json({errors: ["Por favor, ultilize outro e-mail"]})
-        return
+        return;
     }
 
     // Generate password hash
@@ -48,6 +48,12 @@ const register = async(req, res) => {
     })
 };
 
+// Sign user in
+const login = (req, res) => {
+    res.send("Login")
+}
+
 module.exports = {
     register,
+    login,
 };
